@@ -1,0 +1,33 @@
+{{!-- public 폴더 하단에 있었던 index.html 은 삭제함. --}}
+{{!-- 즉, static 한 index.html 은 삭제하고, dynamic 한 index.hbs 만 남겨둠. --}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    {{!-- src/app.js 에서 설정되어 있다. --}}
+    <div class="main-content">
+        {{>header}}
+        <p>U se this site to get your weather</p>
+
+        <form>
+            <input placeholder="Location">
+            <button>Search</button>
+        </form>
+
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+    </div>
+    
+    {{>footer}}
+
+    <script src="/js/app.js"></script>
+
+</body>
+
+</html>
