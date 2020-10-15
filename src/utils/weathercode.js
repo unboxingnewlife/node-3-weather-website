@@ -9,7 +9,7 @@ const weatherCode = (lat, lon, callback) => {
         } else if (body.cod === '400') {              // 강의와는 다른 api 를 사용하고 있어서 코드가 다름.
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, `Now ${body.weather[0].description}, and degree is ${body.main.temp}`);
+            callback(undefined, `Now ${body.weather[0].description}, and degree is ${body.main.temp} /n ${body.weather[0].icon}`);
         }
     })
 }
