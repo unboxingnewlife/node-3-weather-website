@@ -1,4 +1,4 @@
-// front-end javascript
+// front-end javascript.
 
 // index.hbs 에서 브라우져에서 표현될 변수들을 불러온다.
 const weatherForm = document.querySelector('form')
