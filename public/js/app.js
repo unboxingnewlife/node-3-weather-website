@@ -17,7 +17,7 @@ weatherForm.addEventListener('submit', (event) => {
     
     // 이 코드가 구현되는 url=localhost:3000 즉, home 이다.
     // home 에서 home 이하의 url 을 불러다가 사용하는 것이다.
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    fetch('/weather?address=' + location).then((response) => {
     response.json().then((data) => {
         if(data.error) {
             messageOne.textContent = data.error         
