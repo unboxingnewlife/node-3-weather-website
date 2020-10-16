@@ -5,7 +5,7 @@ const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
-
+const icon = document.querySelector('#icon')
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault()              // default 는 event 발생 시 마다 페이지가 새로고침 되도록 하는데, 이를 방지함.
@@ -22,6 +22,12 @@ weatherForm.addEventListener('submit', (event) => {
         if(data.error) {
             messageOne.textContent = data.error         
         } else {
+
+            const imgIcon = data.icon
+            const imgUrl = 'http://openweathermap.org/img/wn/' + imgIcon + '@2x.png'
+
+            // html 이미지에 id 부여하고 src 를 javascript 에서 부여할 수 있다.
+            icon.src = imgUrl
             messageOne.textContent = data.forecast
             messageTwo.textContent = data.location
         }
@@ -29,3 +35,4 @@ weatherForm.addEventListener('submit', (event) => {
 })
     
 })
+

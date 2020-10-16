@@ -85,13 +85,14 @@ app.get('/weather', (req, res) => {
                 error
             })
         }
-        weatherCode(lat, lon, (error, weatherData) => {
+        weatherCode(lat, lon, (error, weatherData, icon) => {
             if(error) {
                 return res.send({
                     error
                 })
             }
             res.send({
+                icon,
                 forecast: weatherData,
                 location,               // 위의 if 문의 error 와 마찬가지로 중복해서 쓸 필요 없다.
                 address
